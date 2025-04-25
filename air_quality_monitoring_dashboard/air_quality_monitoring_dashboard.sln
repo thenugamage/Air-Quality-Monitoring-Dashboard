@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.35906.104 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "air_quality_monitoring_dashboard", "air_quality_monitoring_dashboard.csproj", "{AB421A79-7EA7-4837-9FE2-435A56C07A7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB421A79-7EA7-4837-9FE2-435A56C07A7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB421A79-7EA7-4837-9FE2-435A56C07A7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB421A79-7EA7-4837-9FE2-435A56C07A7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB421A79-7EA7-4837-9FE2-435A56C07A7E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0268E8B1-7F03-42A6-B0EC-EBEC61C07F92}
+	EndGlobalSection
+EndGlobal
