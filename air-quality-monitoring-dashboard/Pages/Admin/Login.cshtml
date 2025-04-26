@@ -1,4 +1,20 @@
 ﻿@page
 @model air_quality_monitoring_dashboard.Pages.Admin.LoginModel
 @{
+    ViewData["Title"] = "Admin Login";
 }
+
+<h2>Admin Login</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Username"></label>
+        <input asp-for="Username" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+    <p class="text-danger">@Model.ErrorMessage</p>
+</form>
