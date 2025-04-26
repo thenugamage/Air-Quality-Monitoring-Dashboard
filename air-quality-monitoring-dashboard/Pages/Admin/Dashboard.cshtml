@@ -1,4 +1,42 @@
 ﻿@page
 @model air_quality_monitoring_dashboard.Pages.Admin.DashboardModel
 @{
+    ViewData["Title"] = "Admin Dashboard";
 }
+
+<h2>Admin Dashboard</h2>
+
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-header">Active Sensors</div>
+            <div class="card-body">
+                <h5 class="card-title">@Model.ActiveSensorsCount</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-header">Total AQI Readings</div>
+            <div class="card-body">
+                <h5 class="card-title">@Model.TotalReadingsCount</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white bg-info mb-3">
+            <div class="card-header">Simulation Status</div>
+            <div class="card-body">
+                <h5 class="card-title">Running</h5> <!-- Assuming simulation is always running -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a href="/Admin/ManageSensors" class="btn btn-outline-primary">Manage Sensors</a>
+    <a href="/Admin/ManageAlerts" class="btn btn-outline-warning">Manage Alerts</a>
+    <a href="/Admin/ManageUsers" class="btn btn-outline-secondary">Manage Users</a> <!-- Optional -->
+</div>
