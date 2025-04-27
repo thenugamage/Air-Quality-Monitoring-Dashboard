@@ -1,0 +1,132 @@
+﻿@page
+@model aqm_dashborad.Pages.DashboardModel
+@{
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/AdminDashboard.css" asp-append-version="true" />
+}
+
+
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>AirMonitor</h2>
+            <p>Air Quality Dashboard</p>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="Admin-Dashboard.html" class="nav-link active">
+                    <i class="fas fa-tachometer-alt nav-icon"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="Manage-Sensors.html" class="nav-link">
+                    <i class="fas fa-microchip nav-icon"></i>
+                    <span>Manage Sensors</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="View-Sensor-Data.html" class="nav-link">
+                    <i class="fas fa-chart-line nav-icon"></i>
+                    <span>Sensor Data</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="User-Management.html" class="nav-link">
+                    <i class="fas fa-users-cog nav-icon"></i>
+                    <span>User Management</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-cog nav-icon"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="login.html" class="nav-link">
+                    <i class="fas fa-sign-out-alt nav-icon"></i>
+                    <span>Log Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header">
+            <h1>Dashboard Overview</h1>
+            <div class="user-info">
+                <div class="user-avatar">A</div>
+                <span class="user-name">Admin User</span>
+            </div>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-title">
+                    <i class="fas fa-microchip stat-icon"></i>
+                    <span>Total Sensors</span>
+                </div>
+                <div class="stat-value">5</div>
+                <div class="stat-trend trend-up">
+                    <i class="fas fa-arrow-up"></i>
+                    <span>1 new sensor this week</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-title">
+                    <i class="fas fa-wind stat-icon"></i>
+                    <span>Average AQI</span>
+                </div>
+                <div class="stat-value">78</div>
+                <div class="aqi-status aqi-moderate">Moderate</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-title">
+                    <i class="fas fa-exclamation-triangle stat-icon"></i>
+                    <span>Active Alerts</span>
+                </div>
+                <div class="stat-value">2</div>
+                <div class="stat-trend trend-down">
+                    <i class="fas fa-arrow-down"></i>
+                    <span>Decreased by 1 since yesterday</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="recent-alerts">
+            <div class="section-header">
+                <h2 class="section-title">Recent Alerts</h2>
+                <a href="#" class="view-all">View All</a>
+            </div>
+
+            <div class="alert-item">
+                <div class="alert-icon">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <div class="alert-info">
+                    <div class="alert-title">High PM2.5 Level</div>
+                    <div class="alert-details">Sensor ID: S003 | Location: Downtown</div>
+                </div>
+                <div class="alert-time">2 hours ago</div>
+            </div>
+
+            <div class="alert-item">
+                <div class="alert-icon">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <div class="alert-info">
+                    <div class="alert-title">Ozone Level Warning</div>
+                    <div class="alert-details">Sensor ID: S001 | Location: East Side</div>
+                </div>
+                <div class="alert-time">5 hours ago</div>
+            </div>
+        </div>
+    </div>
+</div>
