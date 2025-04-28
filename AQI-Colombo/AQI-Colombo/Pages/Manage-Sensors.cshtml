@@ -1,0 +1,256 @@
+@page
+@model AQI_Colombo.Pages.ManageSensorsModel
+
+@{
+    ViewData["Title"] = "Manage-Sensors";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/Manage-Sensors.css"> <!-- Link to your CSS file -->
+    <title>Manage Sensors - Air Quality Monitoring</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  
+</head>
+<body>
+    <!-- Menu Toggle Button (visible only on mobile) -->
+    <button class="menu-toggle" id="menu-toggle">
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </button>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>AQI Colombo</h2>
+                <p>Air Quality Dashboard</p>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="~/Admin-Dashboard" class="nav-link">
+                        <i class="fas fa-tachometer-alt nav-icon"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="~/Manage-Sensors" class="nav-link active">
+                        <i class="fas fa-microchip nav-icon"></i>
+                        <span>Manage Sensors</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="~/View-Sensor-Data" class="nav-link">
+                        <i class="fas fa-chart-line nav-icon"></i>
+                        <span>Sensor Data</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="~/User-Management" class="nav-link">
+                        <i class="fas fa-users-cog nav-icon"></i>
+                        <span>User Management</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-cog nav-icon"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="~/login" class="nav-link">
+                        <i class="fas fa-sign-out-alt nav-icon"></i>
+                        <span>Log Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Manage Sensors</h1>
+                <div class="user-info">
+                    <div class="user-avatar">A</div>
+                    <span class="user-name">Admin User</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn btn-primary">
+                    <i class="fas fa-plus"></i>
+                    <span>Add New Sensor</span>
+                </button>
+                <button class="btn btn-outline">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Refresh Status</span>
+                </button>
+                <button class="btn btn-outline">
+                    <i class="fas fa-file-export"></i>
+                    <span>Export Data</span>
+                </button>
+            </div>
+
+            <!-- Search Box -->
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search by ID, location or status...">
+            </div>
+
+            <!-- Sensors Table -->
+            <div class="table-container">
+                <table class="sensors-table">
+                    <thead>
+                        <tr>
+                            <th>Sensor ID</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                            <th>Last Reading</th>
+                            <th>Battery</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>S001</td>
+                            <td>East Side</td>
+                            <td>
+                                <span class="status-indicator status-active"></span>
+                                Active
+                            </td>
+                            <td>25 Apr 2025, 08:15 AM</td>
+                            <td>92%</td>
+                            <td>
+                                <div class="table-actions">
+                                    <button class="action-btn edit-btn">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete-btn">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>S002</td>
+                            <td>City Center</td>
+                            <td>
+                                <span class="status-indicator status-active"></span>
+                                Active
+                            </td>
+                            <td>25 Apr 2025, 08:20 AM</td>
+                            <td>87%</td>
+                            <td>
+                                <div class="table-actions">
+                                    <button class="action-btn edit-btn">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete-btn">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>S003</td>
+                            <td>Downtown</td>
+                            <td>
+                                <span class="status-indicator status-active"></span>
+                                Active
+                            </td>
+                            <td>25 Apr 2025, 08:17 AM</td>
+                            <td>78%</td>
+                            <td>
+                                <div class="table-actions">
+                                    <button class="action-btn edit-btn">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete-btn">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>S004</td>
+                            <td>West Side</td>
+                            <td>
+                                <span class="status-indicator status-error"></span>
+                                Error
+                            </td>
+                            <td>24 Apr 2025, 11:42 PM</td>
+                            <td>23%</td>
+                            <td>
+                                <div class="table-actions">
+                                    <button class="action-btn edit-btn">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete-btn">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>S005</td>
+                            <td>Industrial Area</td>
+                            <td>
+                                <span class="status-indicator status-inactive"></span>
+                                Inactive
+                            </td>
+                            <td>24 Apr 2025, 09:30 AM</td>
+                            <td>0%</td>
+                            <td>
+                                <div class="table-actions">
+                                    <button class="action-btn edit-btn">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete-btn">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-links">
+            <a href="#" class="footer-link">About the Project</a>
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link">Contact Us</a>
+        </div>
+        <div class="copyright">
+            © 2025 Real-time Air Quality Monitoring Project
+        </div>
+    </div>
+
+    <script src="~/js/Manage-Sensors.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>

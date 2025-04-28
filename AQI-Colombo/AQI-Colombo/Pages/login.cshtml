@@ -1,0 +1,66 @@
+@page
+@model AQI_Colombo.Pages.LoginModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=" stylesheet" href="~/css/login.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Sign Up - Admin Dashboard</title>
+   
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- Header Section -->
+        <header>
+            <div class="nav-container">
+                <h1>Sign Up - Admin Dashboard</h1>
+            </div>
+        </header>
+
+        <!-- Login Container -->
+    <div class="login-container">
+        <h2>Login to Admin Dashboard</h2>
+
+        <!-- Login Form -->
+        <form id="login-form" method="POST" onsubmit="return validateForm()">
+            <label for="username">Username or Email:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username or email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <input type="submit" value="Login">
+        </form>
+
+        <!-- Forgot Password Link -->
+        <div class="forgot-password">
+            <p><a href="forgot-password.html">Forgot Password?</a></p>
+        </div>
+
+        <!-- Sign Up Button -->
+        <div class="signup-btn-container">
+            <a href="~/Admin-Dashboard" class="signup-btn">Admin Dashboard</a> <!-- Link to the signup page -->
+        </div>
+
+        <!-- Error message -->
+        <div id="error-message" class="error-message">
+            <p>Please fill in both fields.</p>
+        </div>
+    </div>
+
+        <!-- Footer Section - Fixed -->
+        <footer>
+            <p>© 2025 Real-time Air Quality Monitoring Project</p>
+        </footer>
+    </div>
+
+    <script src="~/js/login.js"></script>
+</body>
+</html>
