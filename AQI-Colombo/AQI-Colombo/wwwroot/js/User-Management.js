@@ -39,12 +39,14 @@ const userForm = document.getElementById('user-form');
 addUserBtn.addEventListener('click', function() {
 userModal.classList.add('active');
 document.querySelector('.modal-header h3').textContent = 'Add New User';
+document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
 userForm.reset(); // Clear form fields
 });
 
 // Close modal when X button is clicked
 modalClose.addEventListener('click', function() {
 userModal.classList.remove('active');
+document.body.style.overflow = ''; // Re-enable scrolling
 });
 
 // Close modal when Cancel button is clicked
