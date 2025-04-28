@@ -7,4 +7,12 @@
     <RootNamespace>AQI_Colombo</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="3.3.0" />
+  </ItemGroup>
+
 </Project>

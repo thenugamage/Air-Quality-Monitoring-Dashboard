@@ -108,27 +108,31 @@
 
             <!-- Sensors Table -->
             <div class="table-container">
-                <table class="sensors-table">
-                    <thead>
+        <table class="sensors-table">
+            <thead>
+                <tr>
+                    <th>Sensor ID</th>
+                    <th>Location</th>
+                    <th>Status</th>
+                    <th>Last Reading</th>
+                    <th>Battery</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Sensors.Any())
+                {
+                    foreach (var sensor in Model.Sensors)
+                    {
                         <tr>
-                            <th>Sensor ID</th>
-                            <th>Location</th>
-                            <th>Status</th>
-                            <th>Last Reading</th>
-                            <th>Battery</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>S001</td>
-                            <td>East Side</td>
+                            <td>@sensor.SensorId</td>
+                            <td>@sensor.Location</td>
                             <td>
-                                <span class="status-indicator status-active"></span>
-                                Active
+                                <span class="status-indicator @(sensor.IsActive ? "status-active" : "status-inactive")"></span>
+                                @(sensor.IsActive ? "Active" : "Inactive")
                             </td>
-                            <td>25 Apr 2025, 08:15 AM</td>
-                            <td>92%</td>
+                            <td>--</td> <!-- Placeholder for Last AQI Reading -->
+                            <td>--</td> <!-- Placeholder for Battery (if you implement later) -->
                             <td>
                                 <div class="table-actions">
                                     <button class="action-btn edit-btn">
@@ -140,89 +144,17 @@
                                 </div>
                             </td>
                         </tr>
-                        <tr>
-                            <td>S002</td>
-                            <td>City Center</td>
-                            <td>
-                                <span class="status-indicator status-active"></span>
-                                Active
-                            </td>
-                            <td>25 Apr 2025, 08:20 AM</td>
-                            <td>87%</td>
-                            <td>
-                                <div class="table-actions">
-                                    <button class="action-btn edit-btn">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="action-btn delete-btn">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>S003</td>
-                            <td>Downtown</td>
-                            <td>
-                                <span class="status-indicator status-active"></span>
-                                Active
-                            </td>
-                            <td>25 Apr 2025, 08:17 AM</td>
-                            <td>78%</td>
-                            <td>
-                                <div class="table-actions">
-                                    <button class="action-btn edit-btn">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="action-btn delete-btn">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>S004</td>
-                            <td>West Side</td>
-                            <td>
-                                <span class="status-indicator status-error"></span>
-                                Error
-                            </td>
-                            <td>24 Apr 2025, 11:42 PM</td>
-                            <td>23%</td>
-                            <td>
-                                <div class="table-actions">
-                                    <button class="action-btn edit-btn">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="action-btn delete-btn">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>S005</td>
-                            <td>Industrial Area</td>
-                            <td>
-                                <span class="status-indicator status-inactive"></span>
-                                Inactive
-                            </td>
-                            <td>24 Apr 2025, 09:30 AM</td>
-                            <td>0%</td>
-                            <td>
-                                <div class="table-actions">
-                                    <button class="action-btn edit-btn">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="action-btn delete-btn">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="6">No sensors found.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 
             <!-- Pagination -->
             <div class="pagination">
